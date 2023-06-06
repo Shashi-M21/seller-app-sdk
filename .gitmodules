@@ -1,6 +1,6 @@
 [submodule "seller-app"]
 	path = seller-app
-	url = git@github.com:Shashi-M21/seller-app.git
+	url = git@github.com:Shashi-M21/seller-app.git@4367e08
 [submodule "seller-app-protocol"]
 	path = seller-app-protocol
 	url = git@github.com:ONDC-Official/seller-app-protocol.git
