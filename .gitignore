@@ -4,3 +4,7 @@ firebase_config.json
 ~
 .env-pre-prod
 .env-dev
+data
+postgres_init_scripts
+.eslintrc
+.eslintignore

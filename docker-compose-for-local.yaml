@@ -68,6 +68,7 @@ services:
       - ~/.docker-conf/rabbitmq/log/:/var/log/rabbitmq
 
 
+
   mongo:
     image: mongo
     restart: always
@@ -89,10 +90,10 @@ services:
       SMTP_EMAIL_SENDER: ${SMTP_EMAIL_SENDER}
       SMTP_EXCEPTION_EMAIL_RECIPIENTS: ${SMTP_EXCEPTION_EMAIL_RECIPIENTS}
       SMTP_EMAIL_TEMPLATE_HEADER_IMAGE_PATH: ""
-      MONGODB_DATABASE_HOST: mongodb://mongo
+      MONGODB_DATABASE_HOST: mongo
       MONGODB_DATABASE_PORT: 27017
-      MONGODB_DATABASE_USERNAME: "root"
-      MONGODB_DATABASE_PASSWORD: "root"
+      MONGODB_DATABASE_USERNAME: ""
+      MONGODB_DATABASE_PASSWORD: ""
       MONGODB_DATABASE_NAME: "ondc-seller"
       AUTH_ACCESS_JWT_SECRET: "wftd3hg5$g67h*fd5h6fbvcy6rtg5wftd3hg5$g67h*fd5xxx"
       BASE_APP_NAMESPACE: "Seller"
@@ -166,10 +167,11 @@ services:
       - seller
       - postgres
 
+
   postgres:
     image: postgres
     environment:
-      POSTGRES_DB: strapi
+      POSTGRES_DB: ${STRAPI_DATABASE}
       POSTGRES_USER: ${STRAPI_DATABASE_USERNAME}
       POSTGRES_PASSWORD: ${STRAPI_DATABASE_PASSWORD}
     volumes:
